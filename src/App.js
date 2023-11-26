@@ -1,10 +1,19 @@
 import "./App.css";
-import MainModal from "./components/MainModal";
+import Products from "./components/Products";
+import Cart from "./components/Cart";
+import Dashboard from "./components/Dashboard";
+import { Routes, Route } from "react-router-dom";
+import RootLayout from "./components/RootLayout";
 
 function App() {
   return (
     <div className="App">
-      <MainModal />
+      <RootLayout />
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
